@@ -1,0 +1,89 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block body %}
+<!-- Contact Area Start -->
+<div class="contact-area">
+  <div class="container">
+    <div class="contact-wrapper">
+      <div class="row">
+        <div class="col-12">
+          <div class="contact-form">
+            <div class="contact-title mb-30">
+              <h2 class="title">Send A Quest</h2>
+            </div>
+
+
+            <form class="contact-form-style" action="/contact-with-us/" method="post">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <input name="name" placeholder="Name*" type="text" />
+                </div>
+                <div class="col-lg-6">
+                  <input name="email" placeholder="Email*" type="email" required/>
+                </div>
+                <div class="col-lg-12">
+                  <input name="subject" placeholder="Subject*" type="text" required/>
+                </div>
+                <div class="col-lg-12 text-center">
+                  <textarea name="message" placeholder="Your Message*"></textarea>
+                  <button class="btn btn-primary" type="submit" required>Send Message</button>
+                </div>
+              </div>
+            </form>
+
+
+            <p class="form-messege"></p>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="contact-info">
+            <div class="single-contact">
+              <div class="icon-box">
+                <img src="{% static 'assets/images/icons/contact-1.png' %}" alt="">
+              </div>
+              <div class="info-box">
+                <h5 class="title">Address</h5>
+                <p>Shewrapara Overbridge, <br>Mirpur Dhaka.</p>
+              </div>
+            </div>
+            <div class="single-contact">
+              <div class="icon-box">
+                <img src="{% static 'assets/images/icons/contact-2.png' %}" alt="">
+              </div>
+              <div class="info-box">
+                <h5 class="title">Phone No</h5>
+                <p><a href="tel:0123456789">+8801776-068226</a></p>
+                <p><a href="tel:0123456789">+8801976-068226</a></p>
+              </div>
+            </div>
+            <div class="single-contact m-0">
+              <div class="icon-box">
+                <img src="{% static 'assets/images/icons/contact-3.png' %}" alt="">
+              </div>
+              <div class="info-box">
+                <h5 class="title">Email/Web</h5>
+                <p><a href="mailto:demo@example.com">hmart@gmail.com</a></p>
+                <p><a href="https://www.example.com/">www.hmart.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact Area End -->
+<!-- map Area Start -->
+<div class="contact-map">
+    <div id="mapid">
+        <div class="mapouter">
+            <div class="gmap_canvas">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10516.222924324004!2d90.37387091147076!3d23.79003792383249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c734b13aba75%3A0xc422af0a38e9ab98!2sShewrapara%20Overbridge%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1648135224766!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- map Area End -->
+{% endblock body %}
